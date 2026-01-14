@@ -5,7 +5,7 @@ import path from 'path';
 // Load environment variables from .env.local
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 const GEMINI_URL = 'wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidiGenerateContent';
 
 const wss = new WebSocketServer({ port: PORT });
